@@ -9,6 +9,7 @@ import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { registerReadNote, registerSearchNotes, registerListNotes } from "./notes-read.js";
 import { registerCreateNote, registerEditNote, registerAppendToNote, registerDeleteNote } from "./notes-write.js";
 import { registerGetVaultStats } from "./vault.js";
+import { registerAllExcalidrawTools } from "./excalidraw/index.js";
 
 export function registerAllTools(server: McpServer): void {
   // Read-only
@@ -24,4 +25,7 @@ export function registerAllTools(server: McpServer): void {
 
   // Vault-level
   registerGetVaultStats(server);
+
+  // Excalidraw diagrams
+  registerAllExcalidrawTools(server);
 }

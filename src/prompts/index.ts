@@ -10,9 +10,18 @@ import {
   registerCreateNoteDraftPrompt,
   registerReviewVaultPrompt,
 } from "./vault-prompts.js";
+import {
+  registerCreateExcalidrawDiagramPrompt,
+  registerReviewExcalidrawDiagramsPrompt,
+} from "./excalidraw-prompts.js";
 
 export function registerAllPrompts(server: McpServer): void {
+  // Vault / note prompts
   registerSummarizeNotePrompt(server);
   registerCreateNoteDraftPrompt(server);
   registerReviewVaultPrompt(server);
+
+  // Excalidraw prompts
+  registerCreateExcalidrawDiagramPrompt(server);
+  registerReviewExcalidrawDiagramsPrompt(server);
 }
